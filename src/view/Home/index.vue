@@ -2,25 +2,24 @@
   <div class="home">
     <Header></Header>
     <Main></Main>
-    <Sidebar></Sidebar>
     <Footer></Footer>
   </div>
 </template>
-
 <script>
-import Header from '@/components/Header/index.vue'
-import Footer from '@/components/Footer/index.vue'
-import Main from '@/view/Home/Main/index.vue'
-import Sidebar from '@/view/Home/Sidebar/index.vue'
+import Header from '@/components/Header'
+import Main from './Main/index.vue'
+import Footer from '@/components/Footer'
 export default {
   components: {
     Header,
-    Footer,
     Main,
-    Sidebar
+    Footer
   }
 }
 </script>
 
-<style>
+<style lang="less" scoped>
+.home {
+  background-color: #f5f5f5;
+}
 </style>

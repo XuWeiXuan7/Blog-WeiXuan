@@ -1,4 +1,5 @@
 import Vue from 'vue';
-import { Modal, Tabs } from 'ant-design-vue';
+import { Modal, Tag, Icon } from 'ant-design-vue';
 Vue.use(Modal)
-Vue.use(Tabs)
+Vue.use(Tag)
+Vue.use(Icon)

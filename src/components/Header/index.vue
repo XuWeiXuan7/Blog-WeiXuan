@@ -23,9 +23,6 @@ export default {
     return {
       list: ['首页', '时间旅途', '标签', '作品集', '友链', '闲言碎语', '关于'],
       navindex: 0,
-      ModalText: 'Content of the modal',
-      visible: true,
-      confirmLoading: true,
     }
   },
   components: {
@@ -49,6 +46,7 @@ export default {
 <style lang="less" scoped>
 @import "@/assets/css/mixin.less";
 .header {
+  z-index: 999;
   position: sticky;
   top: 0;
   background-color: @hd-color;

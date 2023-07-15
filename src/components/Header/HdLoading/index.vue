@@ -143,7 +143,7 @@ export default {
       }
     };
     return {
-      visible: true,
+      visible: false,
       confirmLoading: false,
       ruleForm: {
         pass: '',
