@@ -10,6 +10,7 @@ import './utils/element'
 import './utils/antdesign'
 import 'ant-design-vue/dist/antd.css';
 import "@/assets/css/mixin.less";
+import 'animate.css'
 new Vue({
     render: h => h(App),
     router

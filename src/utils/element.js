@@ -1,6 +1,6 @@
 // 按需引入 Element
 import Vue from 'vue'
-import { Collapse, Tag, Switch, Button, Select, MessageBox, Message, icon, Form, FormItem, Input, CheckboxGroup, Checkbox } from 'element-ui'
+import { SkeletonItem, Divider, Skeleton, Tag, Switch, Button, Select, MessageBox, Message, icon, Form, FormItem, Input, CheckboxGroup, Checkbox } from 'element-ui'
 import lang from 'element-ui/lib/locale/lang/en'
 import locale from 'element-ui/lib/locale'
 import CollapseTransition from 'element-ui/lib/transitions/collapse-transition';
@@ -18,5 +18,8 @@ Vue.component(Checkbox.name, Checkbox)
 Vue.component(Switch.name, Switch)
 Vue.component(Tag.name, Tag)
 Vue.component(CollapseTransition.name, CollapseTransition)
+Vue.component(Divider.name, Divider)
+Vue.component(Skeleton.name, Skeleton)
+Vue.component(SkeletonItem.name, SkeletonItem)
 Vue.prototype.$message = Message
 Vue.prototype.$MessageBox = MessageBox

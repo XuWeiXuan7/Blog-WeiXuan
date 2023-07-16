@@ -48,7 +48,7 @@
         </div>
       </template>
     </Tally>
-    <Tally>
+    <Install>
       <template v-slot:shezhi>
         <span>标签</span>
       </template>
@@ -61,11 +61,12 @@
           <el-tag type="danger">标签五</el-tag>
         </div>
       </template>
-    </Tally>
+    </Install>
   </div>
 </template>
 <script>
 import Tally from '@/components/Tally'
+import Install from '@/components/Install'
 export default {
   data() {
     return {
@@ -78,7 +79,8 @@ export default {
 
   },
   components: {
-    Tally
+    Tally,
+    Install
   }
 }
 </script>

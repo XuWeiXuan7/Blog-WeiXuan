@@ -1,21 +1,15 @@
 <template>
   <div class="main">
-    <Content></Content>
-    <Sildbar></Sildbar>
+    <div class="content">
+    </div>
   </div>
 </template>
 
 <script>
-import Content from './Content'
-import Sildbar from '@/components/Sidebar'
 export default {
-  components: {
-    Content,
-    Sildbar
-  }
+
 }
 </script>
-
 <style lang="less" scoped>
 .main {
   display: flex;
@@ -24,5 +18,11 @@ export default {
   margin: 20px auto;
   min-height: calc(100% - 240px);
   overflow: hidden;
+  .content {
+    width: calc(100% - 285px);
+    margin-right: 25px;
+    display: flex;
+    flex-direction: column;
+  }
 }
 </style>

@@ -1,33 +1,53 @@
 <template>
-  <div class="header">
-    <div class="hd-main">
-      <div class="hd-logo">伟轩</div>
-      <div class="hd-nav">
-        <a v-for="(item,index) in list"
-           :class="Liang==index?'active':''"
-           @click="GaoLiang(index)">{{item}}</a>
+  <div class="transitionhd1">
+    <el-collapse-transition>
+      <div v-show="navisShow"
+           class="transitionhd2">
+        <div class="header">
+          <div class="hd-main">
+            <div class="hd-logo"><router-link to="/">伟轩</router-link></div>
+            <div class="hd-nav">
+              <router-link :to="item.href"
+                           v-for="(item,index) in list"
+                           :class="Liang==index?'active':''"
+                           @click="GaoLiang(index)"
+                           :key="index">{{item.tab}}</router-link>
+            </div>
+            <div class="hd-login">
+              <el-icon class="el-icon-search"
+                       style="font-size:25px"></el-icon>
+              <HdLoading></HdLoading>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="hd-login">
-        <el-icon class="el-icon-search"
-                 style="font-size:25px"></el-icon>
-        <HdLoading></HdLoading>
-      </div>
-    </div>
+    </el-collapse-transition>
+    <Top :class="navisShow?'animate__animated animate__fadeOutUpBig':'animate__animated animate__fadeInDownBig'"></Top>
   </div>
 </template>
 
 <script>
+import Top from '@/components/Top'
 import HdLoading from './HdLoading'
+import Throttle from '@/utils/throttle'
 export default {
   data() {
     return {
-      list: ['首页', '时间旅途', '标签', '作品集', '友链', '闲言碎语', '关于'],
+      list: [
+        { tab: '首页', href: '/' },
+        { tab: '时间旅途', href: '/time' },
+        { tab: '标签', href: '/classification' }, { tab: '作品集', href: '/works' },
+        { tab: '友链', href: '/friends' }, { tab: '闲言碎语', href: '/gossip' },
+        { tab: '关于', href: '/about' }],
       navindex: 0,
+      navisShow: true
     }
   },
   components: {
     HdLoading,
+    Top
   },
+
   methods: {
     GaoLiang(index) {
       this.navindex = index
@@ -35,16 +55,35 @@ export default {
     showModal() {
       this.visible = true;
     },
+    isScroll() {
+      const top = document.documentElement.scrollTop
+      if (top > 90) {
+        this.navisShow = false
+      } else {
+        this.navisShow = true
+      }
+    }
   },
   computed: {
     Liang() {
       return this.navindex
     }
-  }
+  },
+  mounted() {
+    window.addEventListener('scroll', Throttle(this.isScroll, 100))
+  },
+  unmounted() {
+    window.removeEventListener('scroll', this.isScroll)
+  },
 }
 </script>
 <style lang="less" scoped>
 @import "@/assets/css/mixin.less";
+.transitionhd1 {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
 .header {
   z-index: 999;
   position: sticky;

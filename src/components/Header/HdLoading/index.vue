@@ -59,7 +59,6 @@
             <el-form-item prop="phone">
               <i class="el-icon-phone yx" />
               <el-input type="password"
-                        show-password
                         v-model="ruleForm.checkPass"
                         autocomplete="off"
                         placeholder="电话"></el-input>
@@ -67,7 +66,6 @@
             <el-form-item prop="email">
               <i class="el-icon-message yx" />
               <el-input type="password"
-                        show-password
                         v-model="ruleForm.checkPass"
                         autocomplete="off"
                         placeholder="邮箱"></el-input>
@@ -83,7 +81,6 @@
             <el-form-item prop="NumberCode">
               <i class="el-icon-s-promotion yx" />
               <el-input type="password"
-                        show-password
                         v-model="ruleForm.checkPass"
                         autocomplete="off"
                         placeholder="验证码"></el-input>
@@ -221,5 +218,14 @@ span {
   .yx {
     .login-position;
   }
+}
+body::-webkit-scrollbar {
+  width: 5px;
+  background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 5px;
 }
 </style>

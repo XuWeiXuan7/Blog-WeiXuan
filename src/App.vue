@@ -1,15 +1,19 @@
 <template>
   <div id="app">
+    <Header></Header>
     <router-view></router-view>
+    <Footer></Footer>
   </div>
 </template>
 
 <script>
-
+import Header from '@/components/Header'
+import Footer from '@/components/Footer'
 export default {
   name: 'App',
   components: {
-
+    Header,
+    Footer
   }
 }
 </script>
@@ -20,7 +24,9 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
+  background-color: #f5f5f5;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
+  position: relative;
 }
 </style>

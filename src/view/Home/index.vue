@@ -1,8 +1,6 @@
 <template>
   <div class="home">
-    <Header></Header>
     <Main></Main>
-    <Footer></Footer>
   </div>
 </template>
 <script>
@@ -11,9 +9,9 @@ import Main from './Main/index.vue'
 import Footer from '@/components/Footer'
 export default {
   components: {
-    Header,
+    // Header,
     Main,
-    Footer
+    // Footer
   }
 }
 </script>
@@ -21,5 +19,6 @@ export default {
 <style lang="less" scoped>
 .home {
   background-color: #f5f5f5;
+  min-height: 100vh;
 }
 </style>

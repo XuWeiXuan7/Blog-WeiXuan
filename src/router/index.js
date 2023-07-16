@@ -6,6 +6,9 @@ export default new VueRouter({
         {
             path: '/',
             component: () => import('../view/Home/index.vue')
+        }, {
+            path: '/time',
+            component: () => import('../view/Time/index.vue')
         }
     ]
 })
