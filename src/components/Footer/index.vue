@@ -27,6 +27,8 @@ export default {
 
 <style lang="less" scoped>
 .footer {
+  position: relative;
+  bottom: 0px;
   height: 140px;
   width: 100%;
   display: flex;

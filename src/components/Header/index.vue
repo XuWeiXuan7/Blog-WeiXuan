@@ -9,8 +9,7 @@
             <div class="hd-nav">
               <router-link :to="item.href"
                            v-for="(item,index) in list"
-                           :class="Liang==index?'active':''"
-                           @click="GaoLiang(index)"
+                           :class="navroute===item.href?'active':''"
                            :key="index">{{item.tab}}</router-link>
             </div>
             <div class="hd-login">
@@ -36,22 +35,32 @@ export default {
       list: [
         { tab: '首页', href: '/' },
         { tab: '时间旅途', href: '/time' },
-        { tab: '标签', href: '/classification' }, { tab: '作品集', href: '/works' },
-        { tab: '友链', href: '/friends' }, { tab: '闲言碎语', href: '/gossip' },
+        { tab: '标签', href: '/classification' },
+        { tab: '作品集', href: '/works' },
+        { tab: '友链', href: '/friends' },
+        { tab: '闲言碎语', href: '/gossip' },
         { tab: '关于', href: '/about' }],
-      navindex: 0,
+      navroute: 666,
       navisShow: true
+    }
+  },
+  watch: {
+    '$route': {
+      handler: function (newval, oldval) {
+        this.navroute = newval.fullPath
+        console.log('监视', this.navroute);
+      },
     }
   },
   components: {
     HdLoading,
     Top
   },
-
+  beforeMount() {
+    this.navroute = this.$route.fullPath
+    console.log('挂载前', this.navroute);
+  },
   methods: {
-    GaoLiang(index) {
-      this.navindex = index
-    },
     showModal() {
       this.visible = true;
     },
@@ -64,12 +73,10 @@ export default {
       }
     }
   },
-  computed: {
-    Liang() {
-      return this.navindex
-    }
-  },
   mounted() {
+    //获取导航栏高亮
+    this.navindex = this.$store.state.Home.navActiveNum
+    //滑动事件
     window.addEventListener('scroll', Throttle(this.isScroll, 100))
   },
   unmounted() {

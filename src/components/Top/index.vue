@@ -8,6 +8,7 @@
 
 <script>
 export default {
+  name: 'Top',
   methods: {
     goTop() {
       console.log(this);

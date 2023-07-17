@@ -103,6 +103,7 @@
 
 <script>
 export default {
+  name: 'HdLoading',
   data() {
     var checkAge = (rule, value, callback) => {
       if (!value) {

@@ -11,7 +11,9 @@ import './utils/antdesign'
 import 'ant-design-vue/dist/antd.css';
 import "@/assets/css/mixin.less";
 import 'animate.css'
+import store from '@/store/index'
 new Vue({
     render: h => h(App),
-    router
+    router,
+    store
 }).$mount('#app')

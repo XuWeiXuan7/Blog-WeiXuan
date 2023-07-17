@@ -1,7 +1,10 @@
 <template>
-  <div class="main">
+  <div class="main"
+       v-cloak>
     <div class="content">
+      <slot name="left"></slot>
     </div>
+    <slot name="right"></slot>
   </div>
 </template>
 
@@ -16,7 +19,7 @@ export default {
   justify-content: space-between;
   width: 70%;
   margin: 20px auto;
-  min-height: calc(100% - 240px);
+  min-height: calc(100vh - 240px);
   overflow: hidden;
   .content {
     width: calc(100% - 285px);
@@ -24,5 +27,8 @@ export default {
     display: flex;
     flex-direction: column;
   }
+}
+[v-cloak] {
+  display: none;
 }
 </style>

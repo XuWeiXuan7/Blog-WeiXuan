@@ -132,6 +132,7 @@ export default {
         margin-bottom: 1em;
       }
       .typewriter {
+        color: #1171ee;
         font-size: 12px;
         animation: typing 2s steps(var(--count)) infinite;
         animation-direction: alternate-reverse;

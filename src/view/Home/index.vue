@@ -1,24 +1,28 @@
 <template>
-  <div class="home">
-    <Main></Main>
-  </div>
+  <Main>
+    <template v-slot:left>
+      <Content></Content>
+    </template>
+    <template v-slot:right>
+      <Sildbar></Sildbar>
+    </template>
+  </Main>
 </template>
+
 <script>
-import Header from '@/components/Header'
-import Main from './Main/index.vue'
-import Footer from '@/components/Footer'
+import Main from '@/components/Main'
+import Content from './Content'
+import Sildbar from '@/components/Sidebar'
 export default {
+  name: 'Home',
   components: {
-    // Header,
-    Main,
-    // Footer
+    Content,
+    Sildbar,
+    Main
   }
+
 }
 </script>
 
-<style lang="less" scoped>
-.home {
-  background-color: #f5f5f5;
-  min-height: 100vh;
-}
+<style lang="less">
 </style>

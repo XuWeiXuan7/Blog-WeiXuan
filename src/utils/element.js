@@ -21,5 +21,6 @@ Vue.component(CollapseTransition.name, CollapseTransition)
 Vue.component(Divider.name, Divider)
 Vue.component(Skeleton.name, Skeleton)
 Vue.component(SkeletonItem.name, SkeletonItem)
+
 Vue.prototype.$message = Message
 Vue.prototype.$MessageBox = MessageBox

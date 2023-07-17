@@ -1,5 +1,6 @@
 <template>
-  <div class="content">
+  <!-- <div class="content"> -->
+  <div>
     <div class="ct-box">
       <div class="article"
            v-for="(item,index) in articleList"
@@ -24,10 +25,11 @@
     </div>
     <el-divider>没有更多文章了~标签👌</el-divider>
   </div>
-
+  <!-- </div> -->
 </template>
 
 <script>
+
 export default {
   data() {
     return {
@@ -83,6 +85,7 @@ export default {
     }
   },
   mounted() {
+    //骨架屏测试
     setTimeout(() => {
       this.selBoolean = true
     }, 2000);
@@ -91,68 +94,62 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.content {
-  width: calc(100% - 285px);
-  margin-right: 25px;
-  display: flex;
-  flex-direction: column;
-  .ct-box {
-    .article {
-      .box1 {
+.ct-box {
+  .article {
+    .box1 {
+      display: flex;
+      background-color: #fff;
+      border-radius: 6px;
+      overflow: hidden;
+      margin-bottom: 15px;
+      transition: all 0.3s ease 0s;
+      cursor: pointer;
+      .ac-cover {
+        width: 35%;
+        height: 150px;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+      }
+      .ac-content {
         display: flex;
-        background-color: #fff;
-        border-radius: 6px;
-        overflow: hidden;
-        margin-bottom: 15px;
-        transition: all 0.3s ease 0s;
-        cursor: pointer;
-        .ac-cover {
-          width: 35%;
-          height: 150px;
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
+        flex: 1 1 0%;
+        flex-direction: column;
+        padding: 10px;
+        .thetitle {
+          width: 90%;
+          font-size: 18px;
         }
-        &:hover {
-          transform: translateY(-5px);
-          box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
+        span {
+          background-image: -webkit-linear-gradient(
+            0deg,
+            #3ca5f6,
+            #a86af9
+          ) !important;
+          border-radius: 0 6px 0 6px;
+          color: #fff;
+          display: inline-block;
+          font-size: 12px;
+          font-weight: 400;
+          height: 20px;
+          line-height: 20px;
+          padding: 0 6px;
         }
-        .ac-content {
-          display: flex;
-          flex: 1 1 0%;
-          flex-direction: column;
-          padding: 10px;
-          .thetitle {
-            width: 90%;
-            font-size: 18px;
-          }
-          span {
-            background-image: -webkit-linear-gradient(
-              0deg,
-              #3ca5f6,
-              #a86af9
-            ) !important;
-            border-radius: 0 6px 0 6px;
-            color: #fff;
-            display: inline-block;
-            font-size: 12px;
-            font-weight: 400;
-            height: 20px;
-            line-height: 20px;
-            padding: 0 6px;
-          }
-          .description {
-            color: #909399;
-            margin-top: 6px;
-          }
+        .description {
+          color: #909399;
+          margin-top: 6px;
         }
       }
     }
   }
-  /deep/ .el-divider__text {
-    background-color: #f5f5f5;
-  }
+}
+/deep/ .el-divider__text {
+  background-color: #f5f5f5;
 }
 </style> 
