@@ -14,6 +14,7 @@ import Main from '@/components/Main'
 import Slidebar from '@/components/Sidebar'
 import Journey from './Journey/index.vue'
 export default {
+  name: 'Time',
   components: {
     Main,
     Slidebar,

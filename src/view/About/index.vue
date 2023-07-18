@@ -5,7 +5,7 @@
 <script>
 import Main from '@/components/Main'
 export default {
-  naem: 'Works',
+  naem: 'About',
   components: {
     Main
   }

@@ -12,7 +12,7 @@ export default new VueRouter({
         },
         {
             path: '/classification',
-            component: () => import('../view/Tagging/index.vue'),
+            component: () => import('../view/Classification/index.vue'),
         },
         {
             path: '/works',
@@ -24,7 +24,7 @@ export default new VueRouter({
         },
         {
             path: '/gossip',
-            component: () => import('../view/Friends/index.vue'),
+            component: () => import('../view/Gossip/index.vue'),
         },
         {
             path: '/about',

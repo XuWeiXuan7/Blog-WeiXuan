@@ -1,7 +1,7 @@
 <template>
   <Main>
     <template v-slot:left>
-      <WorkChilden></WorkChilden>
+      <Classification></Classification>
     </template>
     <template v-slot:right>
       <Sidebar></Sidebar>
@@ -11,15 +11,14 @@
 
 <script>
 import Main from '@/components/Main'
-import WorkChilden from './Component'
 import Sidebar from '@/components/Sidebar'
-
+import Classification from './Component/index.vue'
 export default {
-  naem: 'Work',
+  naem: 'Classification',
   components: {
     Main,
     Sidebar,
-    WorkChilden
+    Classification
   }
 }
 </script>

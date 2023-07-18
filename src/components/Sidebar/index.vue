@@ -48,7 +48,7 @@
         </div>
       </template>
     </Tally>
-    <Install>
+    <Install v-if="route!=='/classification'">
       <template v-slot:shezhi>
         <span>标签</span>
       </template>
@@ -68,11 +68,13 @@
 import Tally from '@/components/Tally'
 import Install from '@/components/Install'
 export default {
+  name: 'Sidebar',
   data() {
     return {
       value1: true,
       label: false,
-      music: false
+      music: false,
+      route: ''
     }
   },
   methods: {
@@ -81,6 +83,9 @@ export default {
   components: {
     Tally,
     Install
+  },
+  mounted() {
+    this.route = this.$route.fullPath
   }
 }
 </script>
